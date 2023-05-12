@@ -7,9 +7,9 @@ use App\Http\Controllers\Admin\RoleController;
 use App\Http\Controllers\Admin\UserController;
 use App\Http\Controllers\Auth\UserProfileController;
 use App\Http\Controllers\Admin\KeywordController;
+use App\Http\Middleware\ValidateSignature;
 
-
-Route::middleware('splade')->group(function () {
+Route::middleware(['splade'])->group(function () {
     Route::spladeTable();
 
     Route::get('/', function () {

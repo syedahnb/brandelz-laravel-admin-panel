@@ -6,7 +6,6 @@
     </x-admin-header>
 
     <x-splade-table :for="$auditLogs" search-debounce="1000" striped>
-
         <x-splade-cell actions as="$auditLog">
             <div class="inline-flex space-x-6">
                 @can('audit_log_show')
