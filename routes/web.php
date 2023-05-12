@@ -13,7 +13,7 @@ Route::middleware('splade')->group(function () {
     Route::spladeTable();
 
     Route::get('/', function () {
-        return view('welcome');
+        return view('auth.login');
     });
 
     Route::middleware('auth')->group(function () {

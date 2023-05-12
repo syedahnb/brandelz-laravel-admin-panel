@@ -2,7 +2,14 @@
     <x-auth-card>
         <!-- Validation Errors -->
         <x-auth-validation-errors class="mb-4" />
+        <x-slot:logo>
+            <Link href="{{route('login')}}">
 
+            <img class="h-14 rounded-md  w-auto bg-gray-800 "
+                 src="https://brandelz.com/wp-content/uploads/2022/12/Brandelz-logo.png"
+                 alt="The Brandelz">
+            </Link>
+        </x-slot:logo>
         <x-splade-form action="{{ route('register') }}" class="space-y-4">
             <x-splade-input id="name" type="text" name="name" :label="__('Name')" required autofocus />
             <x-splade-input id="email" type="email" name="email" :label="__('Email')" required />
@@ -14,7 +21,7 @@
                     {{ __('Already registered?') }}
                 </Link>
 
-                <x-splade-submit class="ml-4" :label="__('Register')" />
+                <x-splade-submit class="ml-4 bg-gray-800 text-white" :label="__('Register')" />
             </div>
         </x-splade-form>
     </x-auth-card>

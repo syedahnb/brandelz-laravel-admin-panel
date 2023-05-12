@@ -53,11 +53,6 @@ class User extends Authenticatable
         return $this->roles()->where('title', 'Admin')->exists();
     }
 
-    public function scopeAdmins()
-    {
-        return $this->whereHas('roles', fn($q) => $q->where('title', 'Admin'));
-    }
-
     public function roles()
     {
         return $this->belongsTomany(Role::class, 'roles_users');

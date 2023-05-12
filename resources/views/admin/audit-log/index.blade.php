@@ -4,6 +4,7 @@
             {{ __('List Audit Log') }}
         </x-admin-header-text>
     </x-admin-header>
+
     <x-splade-table :for="$auditLogs" search-debounce="1000" striped>
 
         <x-splade-cell actions as="$auditLog">

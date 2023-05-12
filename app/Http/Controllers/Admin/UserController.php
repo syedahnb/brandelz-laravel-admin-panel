@@ -81,12 +81,15 @@ class UserController extends Controller
     {
         $request->safe()->only(['name', 'email', 'password', 'role_id', 'status']);
 
+        $user->roles()->sync($request->input('role_id'));
         $user->update([
             'name' => $request->name,
             'email' => $request->email,
             'password' => Hash::make($request->password),
             'status' => $request->status
         ]);
+
+
 
         Splade::toast('User Updated!')->autoDismiss(5);
         return redirect()->route('admin.users.index');

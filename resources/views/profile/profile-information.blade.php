@@ -13,7 +13,7 @@
                 </div>
 
                 <div class="col-span-4 sm:col-span-2">
-                    <x-splade-input name="email" label="Email"/>
+                    <x-splade-input disabled readonly name="email" label="Email"/>
                 </div>
 
             </div>

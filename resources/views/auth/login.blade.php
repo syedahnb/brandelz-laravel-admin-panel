@@ -1,15 +1,25 @@
 <x-guest-layout>
     <x-auth-card>
         <!-- Session Status -->
+        <x-slot:logo>
+            <Link href="{{route('login')}}">
+
+            <img class="h-14 rounded-md  w-auto bg-gray-800 "
+                 src="https://brandelz.com/wp-content/uploads/2022/12/Brandelz-logo.png"
+                 alt="The Brandelz">
+            </Link>
+        </x-slot:logo>
         <x-auth-session-status class="mb-4" />
 
         <!-- Validation Errors -->
         <x-auth-validation-errors class="mb-4" />
 
-        <x-splade-form action="{{ route('login') }}" class="space-y-4">
-            <!-- Email Address -->
-            <x-splade-input id="email" type="email" name="email" :label="__('Email')" required autofocus />
-            <x-splade-input id="password" type="password" name="password" :label="__('Password')" required autocomplete="current-password" />
+        <x-splade-form action="{{ route('login') }}" class="space-y-4" reset-on-errors >
+
+
+            <x-splade-input  id="email" type="email" name="email" :label="__('Email')"   />
+
+            <x-splade-input  id="password" type="password" name="password" :label="__('Password')" autocomplete="current-password" />
             <x-splade-checkbox id="remember_me" name="remember" :label="__('Remember me')" />
 
             <div class="flex items-center justify-end">
@@ -19,7 +29,7 @@
                     </Link>
                 @endif
 
-                <x-splade-submit class="ml-3" :label="__('Log in')" />
+                <x-splade-submit :spinner="false" class="ml-3 bg-gray-800 text-white" :label="__('Log in')" />
             </div>
         </x-splade-form>
     </x-auth-card>
