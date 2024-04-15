@@ -7,7 +7,7 @@
             {{ name }}
         </a>
         <Disclosure v-else v-slot="{ open }" :defaultOpen="current">
-            <DisclosureButton :class="[current ? 'bg-gray-800 text-white' : 'text-gray-400 hover:text-white hover:bg-gray-800', 'flex items-center w-full text-left rounded-md p-2 gap-x-3 text-sm leading-6 font-semibold']">
+            <DisclosureButton :class="[open ? 'bg-gray-800 text-white' : 'text-gray-400 hover:text-white hover:bg-gray-800', 'flex items-center w-full text-left rounded-md p-2 gap-x-3 text-sm leading-6 font-semibold']">
                 <component :is="icon" class="h-6 w-6 shrink-0" aria-hidden="true" />
                 {{ name }}
 
@@ -65,7 +65,6 @@ export default {
     },
     methods: {
         toggleOpen() {
-            console.log(this.current)
 
             this.open = !this.open;
         },

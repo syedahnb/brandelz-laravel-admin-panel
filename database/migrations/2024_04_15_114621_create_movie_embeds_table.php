@@ -8,17 +8,16 @@ return new class extends Migration
 {
     /**
      * Run the migrations.
-     *
-     * @return void
      */
-    public function up()
+    public function up(): void
     {
-        Schema::create('keywords', function (Blueprint $table) {
+        Schema::create('movie_embeds', function (Blueprint $table) {
             $table->id();
+            $table->string('imdb');
+            $table->string('tmdb');
+            $table->string('year');
             $table->string('title');
-            $table->string('slug');
-            $table->string('redirect_slug');
-            $table->text('description');
+            $table->string('embed_link');
             $table->boolean('status')->default('1');
             $table->timestamps();
             $table->softDeletes();
@@ -27,11 +26,9 @@ return new class extends Migration
 
     /**
      * Reverse the migrations.
-     *
-     * @return void
      */
-    public function down()
+    public function down(): void
     {
-        Schema::dropIfExists('keywords');
+        Schema::dropIfExists('movie_embeds');
     }
 };
