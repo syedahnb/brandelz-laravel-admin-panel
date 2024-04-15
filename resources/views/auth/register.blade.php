@@ -5,9 +5,7 @@
         <x-slot:logo>
             <Link href="{{route('login')}}">
 
-            <img class="h-14 rounded-md  w-auto bg-gray-800 "
-                 src="https://brandelz.com/wp-content/uploads/2022/12/Brandelz-logo.png"
-                 alt="The Brandelz">
+            <x-application-logo />
             </Link>
         </x-slot:logo>
         <x-splade-form action="{{ route('register') }}" class="space-y-4">

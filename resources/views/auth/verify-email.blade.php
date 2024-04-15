@@ -4,10 +4,7 @@
             {{ __('Thanks for signing up! Before getting started, could you verify your email address by clicking on the link we just emailed to you? If you didn\'t receive the email, we will gladly send you another.') }}
         </div>
         <x-slot:logo>
-
-            <img class="h-14 rounded-md  w-auto bg-gray-800 "
-                 src="https://brandelz.com/wp-content/uploads/2022/12/Brandelz-logo.png"
-                 alt="Your Company">
+            <x-application-logo />
         </x-slot:logo>
 
         @if (session('status') == 'verification-link-sent')

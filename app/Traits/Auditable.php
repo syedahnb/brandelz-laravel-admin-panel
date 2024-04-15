@@ -4,6 +4,8 @@ namespace App\Traits;
 
 use App\Models\AuditLog;
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Support\Facades\Auth;
+
 
 trait Auditable
 {
@@ -22,6 +24,10 @@ trait Auditable
         static::deleted(function (Model $model) {
             self::audit('audit:deleted', $model);
         });
+
+
+
+
     }
 
     protected static function audit($description, $model)
